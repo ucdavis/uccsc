@@ -1,0 +1,228 @@
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 26
+template: false
+archive: false
+id: uccsc_2018_registration
+title: 'UCCSC 2018 Registration'
+description: 'Registration form for UCCSC 2018, including options for lodging and paying via UC Account Number.'
+category: ''
+elements: "uccsc_registration:\n  '#type': webform_wizard_page\n  '#title': 'UCCSC Registration'\n  payment_verified:\n    '#type': checkbox\n    '#title': 'Payment Verified'\n    '#description': 'Once full payment, by account code and/or credit card has been verified, check this box.'\n    '#access_create_roles':\n      - site_manager\n      - administrator\n      - uccsc_registration\n    '#access_update_roles':\n      - site_manager\n      - administrator\n      - uccsc_registration\n  cancelled:\n    '#type': radios\n    '#title': Cancelled\n    '#options':\n      Cancelled: Cancelled\n      'Cancelled and Refunded': 'Cancelled and Refunded'\n      None: None\n    '#access_create_roles':\n      - site_manager\n      - administrator\n      - uccsc_registration\n    '#access_update_roles':\n      - site_manager\n      - administrator\n      - uccsc_registration\n    '#access_view_roles':\n      - site_manager\n      - administrator\n      - uccsc_registration\n  comp_role:\n    '#type': radios\n    '#title': Role\n    '#options':\n      Ambassador: Ambassador\n      CIO: CIO\n      Sautter: Sautter\n      Sourcing: Sourcing\n      Student: Student\n      Volunteer: Volunteer\n      None: None\n      'Limited Registration': 'Limited Registration'\n    '#states':\n      visible:\n        '':\n          '': ''\n    '#access_create_roles':\n      - site_manager\n      - administrator\n      - uccsc_registration\n    '#access_update_roles':\n      - site_manager\n      - administrator\n      - uccsc_registration\n    '#access_view_roles':\n      - site_manager\n      - administrator\n      - uccsc_registration\n  attendee_info:\n    '#type': fieldset\n    '#title': 'Attendee Information'\n    '#help': 'Enter information for the person who will be attending UCCSC. One form per attendee.'\n    '#required': true\n    name:\n      '#type': textfield\n      '#title': 'First Name'\n      '#required': true\n      '#default_value': '[current-user:field_uccsc_first_name]'\n      '#format_items': comma\n    last_name:\n      '#type': textfield\n      '#title': 'Last Name'\n      '#required': true\n      '#default_value': '[current-user:field_uccsc_last_name]'\n    display_name:\n      '#type': textfield\n      '#title': 'Name as you would like it displayed on your UCCSC badge'\n      '#required': true\n      '#default_value': '[current-user:field_uccsc_first_name] [current-user:field_uccsc_last_name]'\n      '#format_items': comma\n    email:\n      '#type': email\n      '#title': 'Email Address'\n      '#required': true\n      '#default_value': '[current-user:mail]'\n    phone_number:\n      '#type': tel\n      '#title': 'Phone Number'\n      '#help': 'Please enter the phone number that would be the best for getting ahold of you at the event itself.'\n      '#default_value': '[current-user:field_uccsc_phone]'\n      '#required': true\n    campus_or_other_organization:\n      '#type': webform_select_other\n      '#title': 'Campus or other organization'\n      '#options':\n        'UC Berkeley': 'UC Berkeley'\n        'UC Davis': 'UC Davis'\n        'UC Irvine': 'UC Irvine'\n        'UC Los Angeles': 'UC Los Angeles'\n        'UC Merced': 'UC Merced'\n        'UC Riverside': 'UC Riverside'\n        'UC San Diego': 'UC San Diego'\n        'UC San Francisco': 'UC San Francisco'\n        'UC Santa Barbara': 'UC Santa Barbara'\n        'UC Santa Cruz': 'UC Santa Cruz'\n        'UC Office of the President': 'UC Office of the President'\n        'UC Ag & Natural Resources': 'UC Ag & Natural Resources'\n        'UC Education Abroad Program': 'UC Education Abroad Program'\n        'Lawrence Berkeley National Lab': 'Lawrence Berkeley National Lab'\n        'Lawrence Livermore National Lab': 'Lawrence Livermore National Lab'\n        'Los Alamos National Lab': 'Los Alamos National Lab'\n      '#other__option_label': 'Other Organization...'\n      '#other__placeholder': 'Enter Organization Name'\n      '#required': true\n    department_or_campus_unit:\n      '#type': textfield\n      '#title': 'Department or Campus Unit'\n    title:\n      '#type': textfield\n      '#title': 'Job Title'\n      '#format_items': comma\n      '#required': true\n    allow_sponsors:\n      '#type': checkbox\n      '#title': 'Allow my name, email, campus/organization, and job title to be shared with sponsors'\n      '#description': '<a href=\"/sponsors\">List of Sponsors</a>'\n  emergency_contact_information:\n    '#type': fieldset\n    '#title': 'Emergency Contact Information'\n    '#help': 'Who should we contact in case of an emergency?'\n    '#required': true\n    emergency_contact_name:\n      '#type': textfield\n      '#title': 'Emergency Contact Name'\n      '#required': true\n      '#format_items': comma\n    emergency_contact_phone:\n      '#type': tel\n      '#title': 'Emergency Contact Phone'\n      '#required': true\n  more_information:\n    '#type': fieldset\n    '#title': Accommodations\n    reception:\n      '#type': radios\n      '#title': 'Will you attend the Monday night reception at the Good Life Garden on August 13?'\n      '#help': 'There is no additional cost for the reception.'\n      '#options': yes_no\n      '#required': true\n    dietary_restrictions:\n      '#type': checkboxes\n      '#title': 'Dietary Restrictions'\n      '#options':\n        None: None\n        Vegan: Vegan\n        Vegetarian: Vegetarian\n        'Gluten Free': 'Gluten Free'\n      '#required': true\n    accessibility_or_other_accommodations:\n      '#type': textarea\n      '#title': 'Please list accessibility or other accommodations needed.'\n      '#format_items': comma\n    dorm:\n      '#type': radios\n      '#title': 'Do you wish to reserve on-campus (dorm) lodging?'\n      '#options':\n        'no': 'No'\n        both: 'Yes: Both Monday and Tuesday Nights -- Cost: $171'\n        monday: 'Yes: Monday Night Only -- Cost: $85.50'\n        tuesday: 'Yes: Tuesday Night Only -- Cost: $85.50'\n      '#required': true\n  conference_registration_information:\n    '#type': fieldset\n    '#title': 'Conference Registration Information'\n    '#description': 'The cost to attend this conference is $175.'\n    comp_session:\n      '#type': radios\n      '#title': 'Are you claiming your complimentary registration for your selected session?'\n      '#description': 'Only one registration fee per selected session will be provided as complimentary.'\n      '#options':\n        'yes': 'Yes'\n        'no': 'No'\n      '#required': true\n    session:\n      '#type': webform_entity_select\n      '#title': 'Select the session that you are presenting'\n      '#help': 'If you don&#39;t see any sessions listed, then you are not listed as the Speaker on any accepted sessions. If you think this is in error, please contact the UCCSC Chairs at <a href=\"mailto:uccsc-chairs@ucdavis.edu\">uccsc-chairs@ucdavis.edu</a>'\n      '#required': true\n      '#unique': true\n      '#unique_error': 'This session has already been selected to receive complimentary registration. Please contact the conference organizers.'\n      '#states':\n        visible:\n          ':input[name=\"comp_session\"]':\n            value: 'yes'\n      '#target_type': node\n      '#selection_handler': views\n      '#selection_settings':\n        view:\n          view_name: uccsc_sessions_reg\n          display_name: entity_reference_1\n          arguments:\n            - '[current-user:uid]'\n    comp_sponsor:\n      '#type': radios\n      '#title': 'Are you claiming complimentary registration for your company''s sponsorship?'\n      '#description': \"Platinum and Gold Sponsorships receive 2 complimentary registrations.<br />\\nSilver Sponsorships receive 1 complimentary registration.<br />\\nBronze Sponsorships are not eligible for complimentary registration.\"\n      '#options':\n        'yes': 'Yes'\n        'no': 'No'\n      '#required': true\n      '#states':\n        visible:\n          ':input[name=\"comp_session\"]':\n            value: 'no'\n    sponsor_name:\n      '#type': webform_entity_select\n      '#title': Sponsorship\n      '#help': \"Platinum and Gold sponsorships are eligible for 2 complimentary registrations.<br />\\nSilver Sponsorships are eligible for 1 complimentary registration.<br />\\nBronze Sponsorships are not eligible for complimentary registration.\"\n      '#required': true\n      '#states':\n        visible:\n          ':input[name=\"comp_sponsor\"]':\n            value: 'yes'\n      '#target_type': node\n      '#selection_handler': 'default:node'\n      '#selection_settings':\n        target_bundles:\n          uccsc_sponsor: uccsc_sponsor\n        sort:\n          field: title\n          direction: ASC\n    comp_volunteer:\n      '#type': radios\n      '#title': 'Are you claiming complimentary registration for your participation on the UCCSC Planning Committee?'\n      '#description': 'Only select Yes if you have actively participated in the UCCSC Planning Committee, or volunteered to assist during the event.'\n      '#options':\n        'yes': 'Yes'\n        'no': 'No'\n      '#required': true\n      '#states':\n        visible:\n          ':input[name=\"comp_sponsor\"]':\n            value: 'no'\n    comp_other:\n      '#type': radios\n      '#title': 'Are you claiming complimentary registration for another reason? SOLD OUT'\n      '#description': \"<strong>SOLD OUT:&nbsp;Unfortunately, we have reached our limit for these complimentary registrations.</strong><br />\\n<br />\\nComplimentary registration will be given on a first-come-first-served basis to 100 UC employees to whom any of the following applies:\\n<ul>\\n\\t<li>Primary position is IT supporting&nbsp;Research.</li>\\n\\t<li>Primary position is IT supporting a Library.</li>\\n\\t<li>First-time UCCSC Attendees</li>\\n</ul>\"\n      '#disabled': true\n      '#options':\n        'yes': 'Yes'\n        'no': 'No'\n      '#required': true\n      '#states':\n        enabled:\n          ':input[name=\"comp_volunteer\"]':\n            value: 'no'\n      '#default_value': 'no'\n    comp_other_reason:\n      '#type': radios\n      '#title': 'Which of the following applies to you:'\n      '#options':\n        research: 'Primary position is in IT supporting Research'\n        library: 'Primary position is in IT supporting a Library'\n      '#required': true\n      '#required_error': 'If you are claiming complimentary registration, please select the reason.'\n      '#states':\n        visible:\n          ':input[name=\"comp_other\"]':\n            value: 'yes'\n  reg_cost:\n    '#type': webform_computed_twig\n    '#title': 'Registration Cost'\n    '#display_on': none\n    '#mode': text\n    '#value': '{% if ''yes'' in [data.comp_session, data.comp_sponsor, data.comp_volunteer, data.comp_other] %}0.00{% else %}175.00{% endif %}'\n    '#store': true\n  dorm_cost:\n    '#type': webform_computed_twig\n    '#title': 'Lodging Cost'\n    '#display_on': none\n    '#mode': text\n    '#value': '{% if data.dorm == ''both'' %}171.00{% elseif data.dorm in [\"monday\", \"tuesday\"] %}85.50{% else %}0.00{% endif %}'\n    '#store': true\npayments_page:\n  '#type': webform_wizard_page\n  '#title': Payments\n  total_cost:\n    '#type': webform_computed_twig\n    '#title': 'Costs:'\n    '#display_on': form\n    '#mode': html\n    '#value': \"<p><strong>Registration Cost:</strong> ${{ (data.reg_cost)|number_format(2, '.') }}<br />\\n<strong>Campus Housing (dorm room) Cost:</strong> ${{ (data.dorm_cost)|number_format(2, '.') }}</p>\\n\\n<p><strong>Total Cost:</strong> ${{ (data.reg_cost + data.dorm_cost)|number_format(2, '.') }}</p>\"\n  uc_account_number_lodging:\n    '#type': textfield\n    '#title': 'If you are purchasing on-campus (dorm) lodging, please enter your UC Account Number for payment'\n    '#description': \"UC account numbers differ by campus. See <a href=\\\"http://afs.ucdavis.edu/our_services/accounting-e-financial-reporting/intercampus-transactions/account-strings.html\\\">this chart</a> for more information.<br />\\nCredit cards will not be accepted as payment for on-campus (dorm) lodging.\"\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"dorm_cost\"]':\n          '!value': '0.00'\n    '#format_items': comma\n  uc_account_number_reg:\n    '#type': textfield\n    '#title': 'If you wish to pay for your registration fee via UC Account Number, please enter it here'\n    '#description': 'UC account numbers differ by campus. See <a href=\"http://afs.ucdavis.edu/our_services/accounting-e-financial-reporting/intercampus-transactions/account-strings.html\">this chart</a> for more information.'\n    '#states':\n      visible:\n        ':input[name=\"reg_cost\"]':\n          '!value': '0.00'\n    '#format_items': comma\n  account_manager:\n    '#type': textfield\n    '#title': 'Name and contact info for Account Manager'\n    '#states':\n      visible:\n        -\n          ':input[name=\"uc_account_number_lodging\"]':\n            filled: true\n        - or\n        -\n          ':input[name=\"uc_account_number_reg\"]':\n            filled: true\n      invisible:\n        ':input[name=\"dorm_cost\"]':\n          value: '0.00'\n        ':input[name=\"reg_cost\"]':\n          value: '0.00'\n    '#format_items': comma\n  cc_payment:\n    '#type': radios\n    '#title': 'Do you intend to pay for your registration via Credit Card?'\n    '#description': 'Credit cards will not be accepted for on-campus (dorm) lodging.'\n    '#options':\n      'yes': 'Yes'\n      'no': 'No'\n    '#required': true\n    '#states':\n      visible:\n        ':input[name=\"reg_cost\"]':\n          '!value': '0.00'\n  cc_notice:\n    '#type': webform_markup\n    '#states':\n      visible:\n        ':input[name=\"cc_payment\"]':\n          value: 'yes'\n        ':input[name=\"reg_cost\"]':\n          '!value': '0.00'\n      invisible:\n        ':input[name=\"reg_cost\"]':\n          value: '0.00'\n    '#markup': '<strong>NOTE: </strong>After submitting your registration form, you will be provided with a link to the UC Davis Conference and Event Services system to pay your registration fee via Credit Card.&nbsp;'\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_once: true
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: 'If you are having problems with this form, please email&nbsp;<a href="mailto:[site:mail]">[site:mail]</a>'
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: true
+  form_details_toggle: false
+  form_login: false
+  form_login_message: 'Please log into the web site in before registering for UCCSC.'
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_login: true
+  submission_login_message: 'You must first log into this site before registering for UCCSC.'
+  submission_exception_message: ''
+  submission_locked_message: ''
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: true
+  wizard_progress_percentage: false
+  wizard_start_label: ''
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 1
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements:
+    reg_cost: reg_cost
+    dorm_cost: dorm_cost
+    total_cost: total_cost
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: authenticated
+  draft_multiple: false
+  draft_auto_save: true
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: 'Submission Received'
+  confirmation_message: "<p>Thank you for submitting your registration for UCCSC 2018.&nbsp;&nbsp;Your registration materials will be reviewed for completeness and accuracy.&nbsp;&nbsp;</p>\r\n\r\n<p>In the meantime, please add&nbsp;<a href=\"/schedule\">sessions and activities</a>&nbsp;to your schedule and&nbsp;take a moment to upload your picture and bio.</p>\r\n\r\n<p>Some things to keep in mind:</p>\r\n\r\n<ul type=\"disc\">\r\n\t<li>If you are paying with a credit card, please continue to the&nbsp;<a href=\"http://www.cevs.ucdavis.edu/confreg/?confid=988\" id=\"LPlnk515639\" rel=\"noopener noreferrer\" target=\"_blank\">CES Payment System</a>&nbsp;and allow&nbsp;48 hours for processing.</li>\r\n\t<li>If you&#39;re using a UC account&nbsp;please allow up to 4 weeks for inter-campus processing.</li>\r\n\t<li>Registration closes on July 3 and cannot be refunded&nbsp;after that date.</li>\r\n\t<li>A $4.20 cancellation fee will be applied to&nbsp;credit card payment refunds.</li>\r\n</ul>\r\n\r\n<p>For more information about the conference, visit <a href=\"https://uccsc.ucdavis.edu\">uccsc.ucdavis.edu</a>. If you have questions, please email&nbsp;<a href=\"mailto:uccsc2018-chairs@ucdavis.edu\" id=\"LPlnk507514\" rel=\"noopener noreferrer\" target=\"_blank\">uccsc2018-chairs@ucdavis.edu</a>.</p>"
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: false
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_user: 1
+  limit_user_interval: null
+  limit_user_message: 'You have already registered.&nbsp;If you are having problems with this form, please email&nbsp;<a href="mailto:[site:mail]">[site:mail]</a>'
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - site_manager
+      - administrator
+      - site_builder
+      - curriculum
+      - uccsc_attendee
+      - uccsc_registration
+    users:
+      - 6606
+      - 6896
+      - 6658
+      - 3878
+      - 6702
+      - 6703
+      - 6547
+      - 7054
+      - 7068
+      - 7108
+      - 6476
+      - 6475
+      - 6610
+      - 7027
+      - 7133
+      - 6607
+      - 5648
+      - 6684
+      - 5148
+      - 6689
+      - 4562
+      - 4567
+      - 7291
+      - 7292
+      - 6370
+      - 7293
+      - 7294
+      - 7296
+      - 5626
+      - 7339
+      - 7342
+      - 7414
+      - 7482
+    permissions: {  }
+  view_any:
+    roles:
+      - uccsc_registration
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles:
+      - uccsc_registration
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles:
+      - authenticated
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles:
+      - uccsc_registration
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    label: Email
+    handler_id: email
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:email:raw]'
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      subject: 'UCCSC Registration'
+      body: "[webform_submission:values:display_name],<br />\n&nbsp;\n<p>Thank you for submitting your registration for UCCSC 2018.&nbsp;&nbsp;Your registration materials will be reviewed for completeness and accuracy.&nbsp;&nbsp;</p>\n\n<p>In the meantime, please add&nbsp;<a href=\"https://uccsc.ucdavis.edu/schedule\">sessions and activities</a>&nbsp;to your schedule and&nbsp;take a moment to upload your picture and bio.</p>\n\n<p>Some things to keep in mind:</p>\n\n<ul type=\"disc\">\n\t<li>If you are paying with a credit card, please continue to the&nbsp;<a href=\"http://www.cevs.ucdavis.edu/confreg/?confid=988\" id=\"LPlnk515639\" rel=\"noopener noreferrer\" target=\"_blank\">CES Payment System</a>&nbsp;and allow&nbsp;48 hours for processing.</li>\n\t<li>If you&#39;re using a UC account&nbsp;please allow up to 4 weeks for inter-campus processing.</li>\n\t<li>Registration closes on July 3 and cannot be refunded&nbsp;after that date.</li>\n\t<li>A $4.20 cancellation fee will be applied to&nbsp;credit card payment refunds.</li>\n</ul>\n\n<p>For more information about the conference, visit <a href=\"https://uccsc.ucdavis.edu\">uccsc.ucdavis.edu</a>. If you have questions, please email&nbsp;<a href=\"mailto:uccsc2018-chairs@ucdavis.edu\" id=\"LPlnk507514\" rel=\"noopener noreferrer\" target=\"_blank\">uccsc2018-chairs@ucdavis.edu</a>.</p>\n\n<h3>Registration details:</h3>\n[webform_submission:values]"
+      excluded_elements:
+        payment_verified: payment_verified
+        reg_cost: reg_cost
+        dorm_cost: dorm_cost
+        total_cost: total_cost
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ietwebdev@ucdavis.edu
+      sender_name: ''

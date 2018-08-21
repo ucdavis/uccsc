@@ -1,0 +1,27 @@
+name: 'UCCSC Sponsors'
+description: 'Provides Sponsor content type and related configuration. A generous organization that makes our event possible.'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - block_style_plugins
+  - ctools
+  - empty_fields
+  - field
+  - field_permissions
+  - file
+  - image
+  - link
+  - menu_ui
+  - node
+  - path
+  - pathauto
+  - system
+  - taxonomy
+  - text
+  - url_embed
+  - user
+  - views
+  - webform
+version: 8.x-1.x
+package: uccsc

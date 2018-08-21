@@ -1,0 +1,77 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_uccsc_bio
+    - field.field.user.user.field_uccsc_display
+    - field.field.user.user.field_uccsc_first_name
+    - field.field.user.user.field_uccsc_institution_company
+    - field.field.user.user.field_uccsc_last_name
+    - field.field.user.user.field_uccsc_mailing_list
+    - field.field.user.user.field_uccsc_phone
+    - field.field.user.user.field_uccsc_user_photo
+    - image.style.medium
+  module:
+    - empty_fields
+    - field_group
+    - image
+    - user
+third_party_settings:
+  field_group:
+    group_uccsc_profile:
+      children:
+        - field_uccsc_user_photo
+        - field_uccsc_institution_company
+        - field_uccsc_bio
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+      label: 'UCCSC Profile'
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_uccsc_bio:
+    type: basic_string
+    weight: 4
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_uccsc_institution_company:
+    type: string
+    weight: 3
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_uccsc_user_photo:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings:
+      empty_fields:
+        handler: ''
+  masquerade:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_uccsc_display: true
+  field_uccsc_first_name: true
+  field_uccsc_last_name: true
+  field_uccsc_mailing_list: true
+  field_uccsc_phone: true
+  member_for: true
+  realname: true

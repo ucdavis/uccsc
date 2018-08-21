@@ -1,0 +1,43 @@
+name: 'UCCSC Event'
+description: 'Provides Venue, Event, and Session content types and related configuration. A <em>Venue</em> is a location where an event or session will take place. An <em>Event</em> is a tour, meeting, workshop, party, or other non-session activity. <em>Sessions</em> are talks given by individuals.'
+type: module
+core: 8.x
+dependencies:
+  - address
+  - better_exposed_filters
+  - block
+  - block_style_plugins
+  - csv_serialization
+  - daterange_compact
+  - datetime
+  - datetime_range
+  - empty_fields
+  - eva
+  - field
+  - field_group
+  - field_permissions
+  - file
+  - flag
+  - geolocation
+  - image
+  - menu_ui
+  - node
+  - options
+  - path
+  - pathauto
+  - rest
+  - search
+  - serialization
+  - system
+  - taxonomy
+  - text
+  - uccsc_event
+  - uccsc_sponsors
+  - uccsc_user
+  - user
+  - verf
+  - video_embed_field
+  - views
+  - views_data_export
+version: 8.x-1.x
+package: uccsc

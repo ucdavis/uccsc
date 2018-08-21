@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_uccsc_proctor
+    - node.type.session
+id: node.session.field_uccsc_proctor
+field_name: field_uccsc_proctor
+entity_type: node
+bundle: session
+label: Proctor
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: role
+      role:
+        uccsc_attendee: uccsc_attendee
+        contributor: '0'
+        editor: '0'
+        site_manager: '0'
+        administrator: '0'
+        site_builder: '0'
+        curriculum: '0'
+        uccsc_registration: '0'
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_uccsc_event_organizer
+    - node.type.event
+id: node.event.field_uccsc_event_organizer
+field_name: field_uccsc_event_organizer
+entity_type: node
+bundle: event
+label: 'Event Organizer'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

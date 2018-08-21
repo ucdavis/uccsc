@@ -1,0 +1,7 @@
+bundle: uccsc
+excluded:
+  - user.role.editor
+  - user.role.site_manager
+  - user.role.administrator
+  - user.role.site_builder
+required: true

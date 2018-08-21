@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ */
+function uccsc_user_user_view_alter(&$build, $type) {
+    $build['#title'] = $type->getDisplayName();
+}

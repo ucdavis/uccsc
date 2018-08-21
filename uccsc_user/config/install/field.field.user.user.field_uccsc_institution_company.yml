@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_uccsc_institution_company
+  module:
+    - user
+id: user.user.field_uccsc_institution_company
+field_name: field_uccsc_institution_company
+entity_type: user
+bundle: user
+label: 'Institution or Company'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

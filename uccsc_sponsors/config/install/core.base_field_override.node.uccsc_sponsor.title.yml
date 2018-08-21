@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.uccsc_sponsor
+id: node.uccsc_sponsor.title
+field_name: title
+entity_type: node
+bundle: uccsc_sponsor
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

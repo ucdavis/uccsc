@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: day_only
+label: 'Day Only'
+locked: false
+pattern: D

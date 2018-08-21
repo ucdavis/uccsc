@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_uccsc_bio
+  module:
+    - user
+id: user.user.field_uccsc_bio
+field_name: field_uccsc_bio
+entity_type: user
+bundle: user
+label: Bio
+description: 'Tell us a little about yourself. If you are submitting a session proposal, this field is required.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

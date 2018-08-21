@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: uccsc_registration
+label: 'UCCSC Registration Officer'
+weight: 0
+is_admin: null

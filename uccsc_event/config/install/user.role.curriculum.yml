@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: curriculum
+label: 'Curriculum Editor'
+weight: -2
+is_admin: null

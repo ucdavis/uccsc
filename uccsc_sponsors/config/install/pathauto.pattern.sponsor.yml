@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: sponsor
+label: Sponsor
+type: 'canonical_entities:node'
+pattern: 'sponsor/[node:title]'
+selection_criteria:
+  fc6cc44e-ff90-41d0-9d67-dbe4b95df8ee:
+    id: node_type
+    bundles:
+      uccsc_sponsor: uccsc_sponsor
+    negate: false
+    context_mapping:
+      node: node
+    uuid: fc6cc44e-ff90-41d0-9d67-dbe4b95df8ee
+selection_logic: and
+weight: -6
+relationships: {  }

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sponsor_level
+    - node.type.uccsc_sponsor
+    - taxonomy.vocabulary.sponsor_level
+id: node.uccsc_sponsor.field_sponsor_level
+field_name: field_sponsor_level
+entity_type: node
+bundle: uccsc_sponsor
+label: 'Sponsorship Level'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sponsor_level: sponsor_level
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,18 @@
+name: 'UCCSC Registration'
+description: 'Registration Webform and Registration Officer Role'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - block_content
+  - block_style_plugins
+  - node
+  - options
+  - system
+  - uccsc_event
+  - uccsc_user
+  - user
+  - views
+  - webform
+version: 8.x-1.x
+package: uccsc

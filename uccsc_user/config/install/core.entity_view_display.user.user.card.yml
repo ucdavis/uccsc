@@ -1,0 +1,66 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.card
+    - field.field.user.user.field_uccsc_bio
+    - field.field.user.user.field_uccsc_first_name
+    - field.field.user.user.field_uccsc_institution_company
+    - field.field.user.user.field_uccsc_last_name
+    - field.field.user.user.field_uccsc_mailing_list
+    - field.field.user.user.field_uccsc_phone
+    - field.field.user.user.field_uccsc_user_photo
+    - image.style.thumbnail
+  module:
+    - empty_fields
+    - image
+    - user
+id: user.user.card
+targetEntityType: user
+bundle: user
+mode: card
+content:
+  field_uccsc_first_name:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: true
+    third_party_settings:
+      empty_fields:
+        handler: ''
+    type: string
+    region: content
+  field_uccsc_institution_company:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_uccsc_last_name:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: true
+    third_party_settings:
+      empty_fields:
+        handler: ''
+    type: string
+    region: content
+  field_uccsc_user_photo:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: content
+    third_party_settings:
+      empty_fields:
+        handler: nbsp
+    type: image
+    region: content
+hidden:
+  field_uccsc_bio: true
+  field_uccsc_mailing_list: true
+  field_uccsc_phone: true
+  member_for: true

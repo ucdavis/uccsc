@@ -1,0 +1,131 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_uccsc_bio
+    - field.field.user.user.field_uccsc_display
+    - field.field.user.user.field_uccsc_first_name
+    - field.field.user.user.field_uccsc_institution_company
+    - field.field.user.user.field_uccsc_last_name
+    - field.field.user.user.field_uccsc_mailing_list
+    - field.field.user.user.field_uccsc_phone
+    - field.field.user.user.field_uccsc_user_photo
+    - image.style.thumbnail
+  module:
+    - field_group
+    - image
+    - mailchimp_lists
+    - path
+    - telephone
+    - user
+third_party_settings:
+  field_group:
+    group_uccsc_profile:
+      children:
+        - field_uccsc_first_name
+        - field_uccsc_last_name
+        - field_uccsc_phone
+        - field_uccsc_institution_company
+        - field_uccsc_bio
+        - field_uccsc_user_photo
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'UCCSC Profile'
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  contact:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_uccsc_bio:
+    type: string_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_uccsc_display:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_uccsc_first_name:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_uccsc_institution_company:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_uccsc_last_name:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_uccsc_mailing_list:
+    type: mailchimp_lists_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_uccsc_phone:
+    type: telephone_default
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_uccsc_user_photo:
+    type: image_image
+    weight: 7
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  google_analytics:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  language:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
